@@ -46,6 +46,15 @@ const CreateCampaign = () => {
             handleChange={(e) => handleFormFieldChange('title', e)}
           />
         </div>
+
+        <FormField
+          labelName="Story *"
+          placeholder="Write your story"
+          isTextArea
+          value={form.description}
+          handleChange={(e) => handleFormFieldChange('description', e)}
+        />
+
       </form>
 
 
