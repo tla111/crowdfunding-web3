@@ -18,6 +18,25 @@ const CampaignDetails = () => {
 
   const remainingDays = daysLeft(state.deadline);
 
+  const fetchDonators = async () => {
+    const data = await getDonations(state.pId);
+
+    setDonators(data);
+  }
+
+  useEffect(() => {
+    if (contract) fetchDonators();
+  }, [contract, address])
+
+  const handleDonate = async () => {
+    setIsLoading(true);
+
+    await donate(state.pId, amount);
+
+    navigate('/')
+    setIsLoading(false);
+  }
+
   return (
     <div>
       {isLoading && <Loader />}
