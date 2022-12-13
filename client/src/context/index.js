@@ -29,6 +29,23 @@ export const StateContextProvider = ({ children }) => {
             console.log("contract call failure", error)
         }
     }
+
+    return (
+        <StateContext.Provider
+            value={{
+                address,
+                contract,
+                connect,
+                createCampaign: publishCampaign,
+                getCampaigns,
+                getUserCampaigns,
+                donate,
+                getDonations
+            }}
+        >
+            {children}
+        </StateContext.Provider>
+    )
 }
 
 export const useStateContext = () => useContext(StateContext);
