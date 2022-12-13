@@ -77,6 +77,22 @@ const CreateCampaign = () => {
           />
         </div>
 
+        <FormField
+          labelName="Campaign image *"
+          placeholder="Place image URL of your campaign"
+          inputType="url"
+          value={form.image}
+          handleChange={(e) => handleFormFieldChange('image', e)}
+        />
+
+        <div className="flex justify-center items-center mt-[40px]">
+          <CustomButton
+            btnType="submit"
+            title="Submit new campaign"
+            styles="bg-[#1dc071]"
+          />
+        </div>
+
       </form>
 
 
