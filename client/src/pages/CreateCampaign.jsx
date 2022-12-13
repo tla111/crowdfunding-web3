@@ -60,6 +60,23 @@ const CreateCampaign = () => {
           <h4 className="font-epilogue font-bold text-[25px] text-white ml-[20px]">You will get 100% of the raised amount</h4>
         </div>
 
+        <div className="flex flex-wrap gap-[40px]">
+          <FormField
+            labelName="Goal *"
+            placeholder="ETH 0.50"
+            inputType="text"
+            value={form.target}
+            handleChange={(e) => handleFormFieldChange('target', e)}
+          />
+          <FormField
+            labelName="End Date *"
+            placeholder="End Date"
+            inputType="date"
+            value={form.deadline}
+            handleChange={(e) => handleFormFieldChange('deadline', e)}
+          />
+        </div>
+
       </form>
 
 
